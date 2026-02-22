@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="AeroScene: Progressive Scene Synthesis for Aerial Robotics">
+  <meta name="keywords" content="drone simulation, scene generation, diffusion model, aerial robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroScene: Progressive Scene Synthesis for Aerial Robotics</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  
+  <link rel="icon" href="./static/images/aioz.svg">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero is-light is-bold">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">AeroScene: Progressive Scene Synthesis for Aerial Robotics</h1>
+            
+            <div class="is-size-5 publication-authors">
+			  <span class="author-block">
+				Nghia Vu<sup>†,2</sup>,
+			  </span>
+			  <span class="author-block">
+				<a href="https://scholar.google.com/citations?user=qCcSKkMAAAAJ&hl=en">Tuong Do</a><sup>†,1,2,3</sup>,
+			  </span>
+			  <span class="author-block">
+				<a href="https://www.linkedin.com/in/nghiavuhuu/">Binh X. Nguyen</a><sup>2</sup>,
+			  </span>
+			  <span class="author-block">
+				Dzung Tran<sup>4</sup>,
+			  </span>
+			  <span class="author-block">
+				Hoan Nguyen<sup>5</sup>,
+			  </span>
+			  <span class="author-block">
+				<a href="https://sg.linkedin.com/in/erman-tjiputra">Erman Tjiputra</a><sup>2</sup>,
+			  </span>
+			  <span class="author-block">
+				<a href="https://scholar.google.com/citations?user=DbAThEgAAAAJ&hl=en">Quang D. Tran</a><sup>2</sup>,
+			  </span>
+			  <span class="author-block">
+				Hai-Nguyen Nguyen<sup>4</sup>,
+			  </span>
+			  <span class="author-block">
+				<a href="https://cgi.csc.liv.ac.uk/~anguyen/">Anh Nguyen</a><sup>1</sup>
+			  </span>
+			</div>
+
+			<div class="is-size-5 publication-authors" style="margin-top:10px;">
+			  <span class="author-block"><sup>†</sup><b>Equal contribution</b></span><br>
+
+			  <span class="author-block"><sup>1</sup><b>University of Liverpool, UK</b></span><br>
+			  <span class="author-block"><sup>2</sup><b>AIOZ Ltd., Singapore</b></span><br>
+			  <span class="author-block"><sup>3</sup><b>National Tsing Hua University, Taiwan</b></span><br>
+			  <span class="author-block"><sup>4</sup><b>RMIT University, Vietnam Campus</b></span><br>
+			  <span class="author-block"><sup>5</sup><b>University of Information Technology, VNUHCM, Vietnam</b></span>
+			</div>
+
+            <div class="publication-links is-centered">
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Source</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <video src="static/figures/Demo.mp4" controls></video>
+          </div>
+          <h2 class="title is-3" style="margin-top: 1rem;">Abstract</h2>
+          <div class="content has-text-justified">
+            Generative models have shown substantial impact across multiple domains, their potential for scene synthesis remains underexplored in robotics. This gap is more evident in drone simulators, where simulation environments still rely heavily on manual efforts, which are time-consuming to create and difficult to scale. In this work, we introduce AeroScene, a hierarchical diffusion model for progressive 3D scene synthesis. Our approach leverages hierarchy-aware tokenization and multi-branch feature extraction to reason across both global layouts and local details, ensuring physical plausibility and semantic consistency. This makes AeroScene particularly suited for generating realistic scenes for aerial robotics tasks such as navigation, landing, and perching. We demonstrate its effectiveness through extensive experiments on our newly collected dataset and a public benchmark, showing that AeroScene significantly outperforms prior methods. Furthermore, we use AeroScene to generate a large-scale dataset of over 1,000 physics-ready, high fidelity 3D scenes that can be directly integrated into NVIDIA Isaac Sim. Finally, we illustrate the utility of these generated environments on downstream drone navigation tasks.
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem Statement + Intro Figure -->
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Problem Statement</h2>
+          <div class="content has-text-justified">
+            Drones are increasingly applied in delivery, inspection, and surveillance, requiring them to navigate and operate within complex 3D environments. Synthesizing realistic scenes for such applications necessitates hierarchical layout generation, where coarse-scale structures (e.g., rooms, terrains, building layouts) establish navigable flight corridors, while fine-scale details (e.g., obstacles, landing areas) ensure task-specific feasibility. However, existing scene creation methods for drone simulators are designed primarily by humans, making them challenging to scale, and often fail to accommodate both physical and fidelity requirements such as unobstructed aerial navigation, accessible interaction areas (e.g., landing pads, inspection points), and coherent indoor-outdoor transitions.
+            <!-- ... (rest of the problem statement text remains the same) ... -->
+            In this paper, we propose AeroScene, a hierarchical diffusion-based framework for 3D scene generation tailored to drone tasks. Our approach operates across scales: coarse-scale synthesis generates high-level structures that preserve airspace and navigability, while fine-scale synthesis refines object placement and specifies drone-interaction areas for task execution. AeroScene includes Cross-scale Progressive Attention, which explicitly models dependencies across scales, ensuring that fine-scale details remain consistent with coarse-scale spatial structures. In addition, we design task-aware guidance functions that encourage collision-free plausibility, maintain semantic correlations in hierarchical orders, and handle relationships between indoor and outdoor objects, thereby aligning generated layouts with real-world aerial operation requirements. To support downstream tasks, scenes created by our method are directly embedded into NVIDIA Isaac Sim for physics-ready simulation.
+          </div>
+
+          <div class="has-text-centered" style="margin: 1.5rem 0 1rem 0;">
+		  <figure style="margin: 0;">
+			<img 
+			  src="static/figures/Intro.png" 
+			  alt="Introduction figure" 
+			  style="max-width: 100%; height: auto; display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 6px;"
+			>
+		  </figure>
+		</div>
+        </div>
+      </div>
+
+      <!-- Methodology -->
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Methodology</h2>
+          <div class="content has-text-justified">
+            We present AeroScene, a hierarchical diffusion model for generating drone-navigable 3D indoor-outdoor scenes. The framework operates in two complementary scales: coarse-grained convolutional blocks extract high-level layout features (e.g., building footprints, terrain, major functional zones), while fine-grained blocks capture detailed object geometry and placement. These multi-scale features are fused via a novel Cross-scale Progressive Attention module that performs bidirectional top-down and bottom-up interactions, ensuring fine details remain semantically and spatially consistent with coarse structures. During denoising, the model incorporates task-aware guidance objectives — including collision avoidance (preventing object overlap and preserving free flight corridors), coarse-to-fine consistency, and semantic constraint alignment — to produce layouts that are both visually plausible and physically feasible for aerial navigation. The final denoised hierarchical layout is converted into a tokenized scene representation and rendered into realistic 3D environments compatible with physics simulation.
+          </div>
+
+          <div class="has-text-centered" style="margin: 2rem 0;">
+  <img 
+    src="static/figures/proposal.png"
+    alt="AeroScene methodology overview"
+    style="max-width: 100%; height: auto; display: block; margin: 0 auto;"
+  >
+</div>
+        </div>
+      </div>
+
+      <!-- Experiments -->
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experiments</h2>
+          <div class="content has-text-justified">
+            The table below shows that our proposed AeroScene method consistently outperforms existing scene synthesis approaches, including both autoregressive and diffusion-based baselines, across our custom drone-oriented dataset and the standard 3D-FRONT benchmark. It achieves the best scores on all five metrics—FID and KID for distribution fidelity, and CR, CFC, and SP for collision avoidance and navigability—demonstrating superior generation of realistic, collision-free, and drone-friendly indoor-outdoor layouts thanks to the hierarchical diffusion design, cross-scale progressive attention, and task-aware guidance.
+          </div>
+
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table border="1" cellspacing="0" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+              <caption style="font-weight: bold; padding: 1rem;"><strong>Quantitative results on scene synthesis.</strong></caption>
+              <thead style="background-color: #f5f5f5;">
+                <tr>
+                  <th>Method</th>
+                  <th>FID↓</th>
+                  <th>KID↓</th>
+                  <th>CR(%)↓</th>
+                  <th>CFC↓</th>
+                  <th>SP↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: #efefef;">
+                  <td colspan="6"><strong>Our Dataset</strong></td>
+                </tr>
+                <!-- Rows for Our Dataset -->
+                <tr><td>ATISS</td><td>45.2</td><td>0.032</td><td>12.5</td><td>0.21</td><td>3.8</td></tr>
+                <tr><td>Diffusion-SDF</td><td>38.7</td><td>0.028</td><td>10.1</td><td>0.18</td><td>3.5</td></tr>
+                <tr><td>DiffuScene</td><td>32.4</td><td>0.025</td><td>8.3</td><td>0.15</td><td>3.2</td></tr>
+                <tr><td>PhyScene</td><td>29.8</td><td>0.023</td><td>7.1</td><td>0.13</td><td>3.0</td></tr>
+                <tr style="background-color: #e6f3ff; font-weight: bold;">
+                  <td>Ours</td>
+                  <td><strong>27.3</strong></td><td><strong>0.021</strong></td><td><strong>6.2</strong></td><td><strong>0.12</strong></td><td><strong>2.7</strong></td>
+                </tr>
+
+                <tr style="background-color: #efefef;">
+                  <td colspan="6"><strong>3D-FRONT Dataset</strong></td>
+                </tr>
+                <!-- Rows for 3D-FRONT -->
+                <tr><td>ATISS</td><td>42.1</td><td>0.030</td><td>11.8</td><td>0.19</td><td>3.6</td></tr>
+                <tr><td>Diffusion-SDF</td><td>35.6</td><td>0.026</td><td>9.4</td><td>0.16</td><td>3.3</td></tr>
+                <tr><td>DiffuScene</td><td>30.2</td><td>0.023</td><td>7.6</td><td>0.14</td><td>3.0</td></tr>
+                <tr><td>PhyScene</td><td>27.9</td><td>0.021</td><td>6.3</td><td>0.12</td><td>2.7</td></tr>
+                <tr style="background-color: #e6f3ff; font-weight: bold;">
+                  <td>Ours</td>
+                  <td><strong>25.8</strong></td><td><strong>0.019</strong></td><td><strong>5.5</strong></td><td><strong>0.11</strong></td><td><strong>2.5</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- BibTeX -->
+      <div class="columns is-centered" id="BibTeX">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">BibTeX</h2>
+          <pre><code>SOON...
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+          <div class="content">
+            <p>
+              The website template was borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.  
+              We would like to thank Keunhong Park for sharing the template.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
